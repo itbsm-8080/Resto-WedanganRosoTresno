@@ -584,15 +584,15 @@ begin
 
     end;
 
-    if (MonthOf(dtTanggal.DateTime) <> MonthOf(cGetServerTime)) then
-    begin
-      if (StrToInt(FormatDateTime('dd',cGetServerTime))> getbatas('CR')) then
-      begin
-        ShowMessage('Sudah Tidak bisa diedit pembayaran beda periode');
-        result:=false;
-         Exit;
-      end;
-    end;
+//    if (MonthOf(dtTanggal.DateTime) <> MonthOf(cGetServerTime)) then
+//    begin
+//      if (StrToInt(FormatDateTime('dd',cGetServerTime))> getbatas('CR')) then
+//      begin
+//        ShowMessage('Sudah Tidak bisa diedit pembayaran beda periode');
+//        result:=false;
+//         Exit;
+//      end;
+//    end;
 
    If (chkCash.Checked) and (cxLookupRekeningCash.EditValue = '') then
     begin

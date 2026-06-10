@@ -116,7 +116,7 @@ var
   frmListIOS: TfrmListIOS;
 
 implementation
-   uses Ulib, MAIN, uModuleConnection, cxgridExportlink,uReport,ufrmInvoice;
+   uses Ulib, MAIN, uModuleConnection, cxgridExportlink,uReport;
 {$R *.dfm}
 
 
@@ -367,22 +367,22 @@ begin
 end;
 
 procedure TfrmListIOS.LihatFakturPenjualan1Click(Sender: TObject);
-var
-  frmInvoice: TfrmInvoice;
+//var
+//  frmInvoice: TfrmInvoice;
 begin
   inherited;
-  If ds3.FieldByname('Nomor').IsNull then exit;
-  if ActiveMDIChild.Caption <> 'Invoice' then
-   begin
-//      ShowForm(TfrmBrowseBarang).Show;
-      frmInvoice  := frmmenu.ShowForm(TfrmInvoice) as TfrmInvoice;
-      frmInvoice.ID := ds3.FieldByname('Nomor').AsString;
-      frmInvoice.FLAGEDIT := True;
-      frmInvoice.edtnOMOR.Text := ds3.FieldByname('Nomor').AsString;
-      frmInvoice.loaddataall(ds3.FieldByname('Nomor').AsString);
-
-   end;
-   frmInvoice.Show;
+//  If ds3.FieldByname('Nomor').IsNull then exit;
+//  if ActiveMDIChild.Caption <> 'Invoice' then
+//   begin
+////      ShowForm(TfrmBrowseBarang).Show;
+//      frmInvoice  := frmmenu.ShowForm(TfrmInvoice) as TfrmInvoice;
+//      frmInvoice.ID := ds3.FieldByname('Nomor').AsString;
+//      frmInvoice.FLAGEDIT := True;
+//      frmInvoice.edtnOMOR.Text := ds3.FieldByname('Nomor').AsString;
+//      frmInvoice.loaddataall(ds3.FieldByname('Nomor').AsString);
+//
+//   end;
+//   frmInvoice.Show;
 end;
 procedure TfrmListIOS.cxButton1Click(Sender: TObject);
 begin

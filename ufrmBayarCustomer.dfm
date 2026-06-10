@@ -485,7 +485,7 @@ object frmBayarCustomer: TfrmBayarCustomer
       OleDropSource = False
       Signed = False
       TabOrder = 5
-      Text = '0.00'
+      Text = '0,00'
       Transparent = False
       Visible = True
       OnKeyPress = FormKeyPress
@@ -579,7 +579,7 @@ object frmBayarCustomer: TfrmBayarCustomer
       OleDropSource = False
       Signed = False
       TabOrder = 8
-      Text = '0.00'
+      Text = '0,00'
       Transparent = False
       Visible = True
       OnKeyPress = FormKeyPress
@@ -689,7 +689,7 @@ object frmBayarCustomer: TfrmBayarCustomer
       OleDropSource = False
       Signed = False
       TabOrder = 20
-      Text = '0.00'
+      Text = '0,00'
       Transparent = False
       Visible = True
       OnKeyPress = FormKeyPress
@@ -811,7 +811,7 @@ object frmBayarCustomer: TfrmBayarCustomer
       OleDropSource = False
       Signed = False
       TabOrder = 16
-      Text = '0.00'
+      Text = '0,00'
       Transparent = False
       Visible = True
       OnKeyPress = FormKeyPress
@@ -871,7 +871,7 @@ object frmBayarCustomer: TfrmBayarCustomer
       OleDropSource = False
       Signed = False
       TabOrder = 19
-      Text = '0.00'
+      Text = '0,00'
       Transparent = False
       Visible = True
       OnKeyPress = FormKeyPress
@@ -931,7 +931,7 @@ object frmBayarCustomer: TfrmBayarCustomer
       OleDropSource = False
       Signed = True
       TabOrder = 11
-      Text = '0.00'
+      Text = '0,00'
       Transparent = False
       Visible = True
       OnKeyPress = FormKeyPress

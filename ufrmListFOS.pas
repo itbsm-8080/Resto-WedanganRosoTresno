@@ -121,7 +121,7 @@ var
   frmListFOS: TfrmListFOS;
 
 implementation
-   uses Ulib, MAIN, uModuleConnection, cxgridExportlink,uReport,ufrmFP;
+   uses Ulib, MAIN, uModuleConnection, cxgridExportlink,uReport;
 {$R *.dfm}
 
 
@@ -198,9 +198,8 @@ begin
         + ' (select sum(retj_amount) from tretj_hdr where retj_fp_nomor =z.fp_nomor) Retur, '
         + ' (FP_AMOUNT-fp_dp-fp_bayar) Sisa_Piutang,'
         + ' DATEDIFF('+quotd(startdate.DateTime)+',fp_jthtempo) AS OVERDUE '
-        + ' from tfp_hdr z inner join tcustomer on cus_kode=fp_cus_kode left join'
-        + ' tdo_hdr on fp_do_nomor=do_nomor  left join tso_hdr on do_so_nomor=so_nomor'
-        + ' left JOIN tsalesman on sls_kode=so_sls_kode'
+        + ' from tfp_hdr z inner join tcustomer on cus_kode=fp_cus_kode '
+        + ' left JOIN tsalesman on sls_kode=fp_sls_kode'
         + ' where (FP_AMOUNT-fp_dp-fp_bayar) > 0 '
         + ' group by fp_nomor ,fp_tanggal ,fp_memo ,cus_nama ) a'
         + ' where (sisa_piutang-ifnull(Retur,0)) > 1  and tanggal <= '+quotd(enddate.DateTime)+' order by Overdue';
@@ -396,24 +395,22 @@ begin
 end;
 
 procedure TfrmListFOS.LihatFakturPenjualan1Click(Sender: TObject);
-var
-  frmFP: TfrmFP;
 begin
   inherited;
-  If ds3.FieldByname('Nomor').IsNull then exit;
-  if ActiveMDIChild.Caption <> 'Faktur Penjualan' then
-   begin
-//      ShowForm(TfrmBrowseBarang).Show;
-      frmFP  := frmmenu.ShowForm(TfrmFP) as TfrmFP;
-      frmFP.ID := ds3.FieldByname('Nomor').AsString;
-      frmFP.FLAGEDIT := True;
-      frmFP.edtnOMOR.Text := frmMenu.KDCABANG+'-SO'+copy(ds3.FieldByname('Nomor').AsString,6,Length(ds3.FieldByname('Nomor').AsString));
-      frmFP.loaddataall(frmFP.edtnOMOR.Text);
-        frmFP.cxButton2.Enabled :=False;
-        frmFP.cxButton1.Enabled :=False;
-        frmFP.cxButton3.Enabled := False;
-   end;
-   frmFP.Show;
+//  If ds3.FieldByname('Nomor').IsNull then exit;
+//  if ActiveMDIChild.Caption <> 'Faktur Penjualan' then
+//   begin
+////      ShowForm(TfrmBrowseBarang).Show;
+//      frmFP  := frmmenu.ShowForm(TfrmFP) as TfrmFP;
+//      frmFP.ID := ds3.FieldByname('Nomor').AsString;
+//      frmFP.FLAGEDIT := True;
+//      frmFP.edtnOMOR.Text := frmMenu.KDCABANG+'-SO'+copy(ds3.FieldByname('Nomor').AsString,6,Length(ds3.FieldByname('Nomor').AsString));
+//      frmFP.loaddataall(frmFP.edtnOMOR.Text);
+//        frmFP.cxButton2.Enabled :=False;
+//        frmFP.cxButton1.Enabled :=False;
+//        frmFP.cxButton3.Enabled := False;
+//   end;
+//   frmFP.Show;
 end;
 
 
